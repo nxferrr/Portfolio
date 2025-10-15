@@ -85,3 +85,8 @@ h8{
 #link{
     width: 50%;
 }
+
+#reseaux{
+    display: flex;
+    gap: 20px;
+}
