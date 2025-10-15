@@ -18,6 +18,7 @@ nav {
     border: 5px solid antiquewhite;
     margin: auto;
     color: black;
+    
 
 
 }
@@ -52,7 +53,12 @@ header{
   border-radius: 10px;
 }
 #apropos{
-    color: white;
+    color: black; 
+    border: 5px solid antiquewhite;
+    padding: 8px;
+    margin: 20px;
+    border-radius: 10px;
+    background-color: antiquewhite;
 }
 
 #softskill{
@@ -75,6 +81,7 @@ h8{
     display: flex;
     flex-direction: row;
     width: 100%;
+    gap: 20px;
 }
 
 #git{
@@ -86,7 +93,36 @@ h8{
     width: 50%;
 }
 
-#reseaux{
+#realisations{
+    color: white;
+
+}
+
+#box2{
     display: flex;
-    gap: 20px;
+    flex-direction: row;
+    width: 80%;
+    margin: auto;
+    color: black;
+    border: 10px solid antiquewhite;
+    padding: 8px;
+    border-radius: 10px;
+    background-color: antiquewhite;
+
+}
+
+#technologie{
+    color: white;
+}
+
+#box3{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin: auto;
+    color: black;
+    border: 10px solid antiquewhite;
+    padding: 8px;
+    border-radius: 10px;
+    background-color: antiquewhite;
 }
