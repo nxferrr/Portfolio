@@ -11,9 +11,9 @@
         <h1>Ludovic Thenot</h1>
         <nav>
             <a href="#apropos">À propos</a> |
-            <a href="#softskill">Soft Skills</a> |
-            <a href="#realisations">Réalisations</a> |
-            <a href="#technologie">Technologies</a>
+            <a href="softskills.html">Soft Skills</a> |
+            <a href="realisations.html">Réalisations</a> |
+            <a href="technologies.html">Technologies</a>
         </nav>
     </header>
 
@@ -23,83 +23,38 @@
             <p>Je suis actuellement en formation pour obtenir mon BTS SIO.</p>
         </section>
 
-        <section id="softskill">
+        <section id="presentation">
             <h2>
-                <img src="Assets/icons8-critical-thinking-100.png" alt="Icône réflexion" width="25" height="25">
-                Mes Soft Skills
+                <img src="Assets/icons8-communication-skill-96.png" alt="Icône présentation" width="35">
+                Présentation
             </h2>
-
             <div id="box1">
-                <ul>
-                    <li>
-                        <h3>Patient</h3>
-                        <p>La patience est une vertu que je sais maîtriser. Apres tous, Rien ne sert de courir, il faut partir à point.</p>
-                        <img src="Assets/icons8-waiting-room-100.png" alt="Homme patient" width="100">
-                    </li>
-
-                    <li>
-                        <h3>Autodidacte</h3>
-                        <p>Apprendre grâce aux ressources disponibles sur internet m’a permis d’accroître mes compétences.Et de validé ma passion pour l'informatique.</p>
-                        <img src="Assets/icons8-learning-100.png" alt="Homme pensif" width="100">
-                    </li>
-
-                    <li>
-                        <h3>Calme</h3>
-                        <p>Je sais rester calme dans les moments de stress pour réfléchir de manière méthodique. Les moments les plus stressante sont les situations ou ont peut faire le plus d'erreur.</p>
-                        <img src="Assets/icons8-gourou-flottant-100.png" alt="Homme faisant du yoga" width="100">
-                    </li>
-                </ul>
+                <p>Bienvenue sur mon portfolio ! Je suis Ludovic Thenot, étudiant en BTS SIO (Services Informatiques aux Organisations).</p>
+                <p>Passionné par l'informatique et l'innovation technologique, je me spécialise dans les solutions d'infrastructure, systèmes et réseaux.</p>
+                <p>Explorez les différentes sections pour découvrir mes compétences, réalisations et projets.</p>
             </div>
         </section>
 
-        <section id="realisations">
+        <section id="navigation">
             <h2>
-                <img src="Assets/icons8-storage-64.png" alt="Icône entrepôt ouvert" width="35">
-                Réalisations
+                <img src="Assets/icons8-technology-100.png" alt="Icône navigation" width="35">
+                Navigation
             </h2>
             <div id="box2">
-                <ul>
-                    <li>
-                        Mettre en place un pare-feu ou une solution de sécurité réseau
-                    </li>
-                    <li>
-                        Mettre à jour les postes de travail (migration de Windows 10 vers 11, installation de Linux, etc.)
-                    </li>
-                    <li>
-                        Gérer la sauvegarde et la restauration des données de l’entreprise
-                    </li>
-                    <li>
-                        Installer un serveur NAS ou mettre en place un plan de sauvegarde automatisé
-                    </li>
-                    <li>
-                        Mettre à jour les postes de travail (migration de Windows 10 vers 11, installation de Linux, etc.)
-                    </li>
-                    <li>
-                        Configurer une infrastructure Wi-Fi sécurisée (entreprise, école, mairie…)
-                    </li>
-                </ul>
-
-            </div>
-        </section>
-
-        <section id="technologie">
-            <h2>
-                <img src="Assets/icons8-technology-100.png" alt="Icône engrenage" width="35">
-                Technologies
-            </h2>
-            <div id="box3">
-                <ul>
-                    <li>
-                        HTML
-                    </li>
-                    <li>
-                        CSS
-                    </li>
-                    <li>
-                        JS/JAVA
-                    </li>
-                </ul>
-
+                <div class="nav-cards">
+                    <div class="nav-card">
+                        <h3><a href="softskills.html">Soft Skills</a></h3>
+                        <p>Découvrez mes compétences comportementales et ma personnalité professionnelle</p>
+                    </div>
+                    <div class="nav-card">
+                        <h3><a href="realisations.html">Réalisations</a></h3>
+                        <p>Explorez mes projets et réalisations techniques</p>
+                    </div>
+                    <div class="nav-card">
+                        <h3><a href="technologies.html">Technologies</a></h3>
+                        <p>Consultez mes compétences techniques et certifications</p>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -122,5 +77,44 @@
             </div>
         </section>
     </footer>
+
+    <script>
+        
+        const cursorFollower = document.createElement('div');
+        cursorFollower.className = 'cursor-follower';
+        document.body.appendChild(cursorFollower);
+
+        
+        document.addEventListener('mousemove', (e) => {
+            cursorFollower.style.left = e.clientX - 10 + 'px';
+            cursorFollower.style.top = e.clientY - 10 + 'px';
+        });
+
+        
+        document.addEventListener('mousedown', () => {
+            cursorFollower.classList.add('clicking');
+        });
+
+        document.addEventListener('mouseup', () => {
+            cursorFollower.classList.remove('clicking');
+        });
+
+        
+        let trailCount = 0;
+        document.addEventListener('mousemove', (e) => {
+            trailCount++;
+            if (trailCount % 3 === 0) {
+                const trail = document.createElement('div');
+                trail.className = 'cursor-trail';
+                trail.style.left = e.clientX - 2 + 'px';
+                trail.style.top = e.clientY - 2 + 'px';
+                document.body.appendChild(trail);
+
+                setTimeout(() => {
+                    trail.remove();
+                }, 400);
+            }
+        });
+    </script>
 </body>
 </html>

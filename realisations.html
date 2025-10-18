@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Réalisations - Ludovic Thenot</title>
+</head>
+<body>
+    <header>   
+        <h1><a href="index.html">Ludovic Thenot</a></h1>
+        <nav>
+            <a href="index.html">Accueil</a> |
+            <a href="index.html#apropos">À propos</a> |
+            <a href="index.html#softskill">Soft Skills</a> |
+            <a href="realisations.html">Réalisations</a> |
+            <a href="technologies.html">Technologies</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="realisations">
+            <h2>
+                <img src="Assets/icons8-storage-64.png" alt="Icône entrepôt ouvert" width="35">
+                Réalisations
+            </h2>
+            <div id="box2">
+                <ul>
+                    <li>
+                        <h3>Mise en place d'un pare-feu</h3>
+                        <p>Configuration et déploiement d'une solution de sécurité réseau pour une entreprise locale</p>
+                        <span class="project-tag">Sécurité</span>
+                    </li>
+                    <li>
+                        <h3>Migration Windows 10 vers 11</h3>
+                        <p>Mise à jour des postes de travail avec préservation des données utilisateur</p>
+                        <span class="project-tag">Système</span>
+                    </li>
+                    <li>
+                        <h3>Installation de Linux</h3>
+                        <p>Déploiement de distributions Linux sur plusieurs postes de travail</p>
+                        <span class="project-tag">Système</span>
+                    </li>
+                    <li>
+                        <h3>Gestion de sauvegarde automatisée</h3>
+                        <p>Mise en place d'un système de sauvegarde et restauration des données d'entreprise</p>
+                        <span class="project-tag">Infrastructure</span>
+                    </li>
+                    <li>
+                        <h3>Installation serveur NAS</h3>
+                        <p>Configuration d'un serveur de stockage en réseau pour partage de fichiers</p>
+                        <span class="project-tag">Réseau</span>
+                    </li>
+                    <li>
+                        <h3>Infrastructure Wi-Fi sécurisée</h3>
+                        <p>Configuration d'un réseau Wi-Fi sécurisé pour entreprise, école et mairie</p>
+                        <span class="project-tag">Réseau</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projets-web">
+            <h2>
+                <img src="Assets/icons8-technology-100.png" alt="Icône développement" width="35">
+                Projets Web
+            </h2>
+            <div id="box5">
+                <ul>
+                    <li>
+                        <h3>Portfolio Personnel</h3>
+                        <p>Site web responsive avec design papier froissé et curseur personnalisé</p>
+                        <span class="project-tag">Web Design</span>
+                    </li>
+                    <li>
+                        <h3>Applications JavaScript</h3>
+                        <p>Développement d'applications web interactives</p>
+                        <span class="project-tag">JavaScript</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <section id="footer">
+            <h2>Contact - Réseaux</h2>
+            <div id="reseaux">
+                <div id="git">
+                    <a href="https://github.com/nxferrr" target="_blank" rel="noopener noreferrer">
+                        <img src="Assets/icons8-octocat.svg" alt="Logo GitHub" width="40" height="40">
+                    </a>
+                </div>
+                <div id="link">
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                        <img src="Assets/icons8-linkedin-96.png" alt="Logo LinkedIn" width="40" height="40">
+                    </a>
+                </div>
+            </div>
+        </section>
+    </footer>
+
+    <script>
+        const cursorFollower = document.createElement('div');
+        cursorFollower.className = 'cursor-follower';
+        document.body.appendChild(cursorFollower);
+
+        document.addEventListener('mousemove', (e) => {
+            cursorFollower.style.left = e.clientX - 10 + 'px';
+            cursorFollower.style.top = e.clientY - 10 + 'px';
+        });
+
+        document.addEventListener('mousedown', () => {
+            cursorFollower.classList.add('clicking');
+        });
+
+        document.addEventListener('mouseup', () => {
+            cursorFollower.classList.remove('clicking');
+        });
+
+        let trailCount = 0;
+        document.addEventListener('mousemove', (e) => {
+            trailCount++;
+            if (trailCount % 3 === 0) {
+                const trail = document.createElement('div');
+                trail.className = 'cursor-trail';
+                trail.style.left = e.clientX - 2 + 'px';
+                trail.style.top = e.clientY - 2 + 'px';
+                document.body.appendChild(trail);
+
+                setTimeout(() => {
+                    trail.remove();
+                }, 400);
+            }
+        });
+    </script>
+</body>
+</html>

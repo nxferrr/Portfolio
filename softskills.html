@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Soft Skills - Ludovic Thenot</title>
+</head>
+<body>
+    <header>   
+        <h1><a href="index.html">Ludovic Thenot</a></h1>
+        <nav>
+            <a href="index.html">Accueil</a> |
+            <a href="index.html#apropos">À propos</a> |
+            <a href="softskills.html">Soft Skills</a> |
+            <a href="realisations.html">Réalisations</a> |
+            <a href="technologies.html">Technologies</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="softskill">
+            <h2>
+                <img src="Assets/icons8-critical-thinking-100.png" alt="Icône réflexion" width="25" height="25">
+                Soft Skills
+            </h2>
+
+            <div id="box1">
+                <ul>
+                    <li>
+                        <h3>Patient</h3>
+                        <p>Rien ne sert de courir, il faut partir à point.</p>
+                        <img src="Assets/icons8-waiting-room-100.png" alt="Patience" width="80">
+                        <div class="skill-description">
+                            <p>Capacité à prendre le temps nécessaire pour résoudre les problèmes complexes sans précipitation.</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <h3>Autodidacte</h3>
+                        <p>Apprentissage autonome et passion pour l'informatique.</p>
+                        <img src="Assets/icons8-learning-100.png" alt="Apprentissage" width="80">
+                        <div class="skill-description">
+                            <p>Capacité à apprendre de manière autonome grâce aux ressources disponibles en ligne et à l'expérimentation.</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <h3>Calme</h3>
+                        <p>Réflexion méthodique même sous pression.</p>
+                        <img src="Assets/icons8-gourou-flottant-100.png" alt="Sérénité" width="80">
+                        <div class="skill-description">
+                            <p>Capacité à rester serein et à réfléchir de manière méthodique dans les situations stressantes.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="competences-transversales">
+            <h2>
+                <img src="Assets/icons8-communication-skill-96.png" alt="Icône communication" width="35">
+                Compétences Transversales
+            </h2>
+            <div id="box6">
+                <ul>
+                    <li>
+                        <h3>Résolution de Problèmes</h3>
+                        <p>Approche méthodique et créative pour identifier et résoudre les défis techniques</p>
+                    </li>
+                    <li>
+                        <h3>Adaptabilité</h3>
+                        <p>Capacité à s'adapter rapidement aux nouvelles technologies et environnements</p>
+                    </li>
+                    <li>
+                        <h3>Esprit d'Équipe</h3>
+                        <p>Collaboration efficace et communication claire avec les collègues</p>
+                    </li>
+                    <li>
+                        <h3>Curiosité</h3>
+                        <p>Désir constant d'apprendre et d'explorer de nouvelles technologies</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <section id="footer">
+            <h2>Contact - Réseaux</h2>
+            <div id="reseaux">
+                <div id="git">
+                    <a href="https://github.com/nxferrr" target="_blank" rel="noopener noreferrer">
+                        <img src="Assets/icons8-octocat.svg" alt="Logo GitHub" width="40" height="40">
+                    </a>
+                </div>
+                <div id="link">
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                        <img src="Assets/icons8-linkedin-96.png" alt="Logo LinkedIn" width="40" height="40">
+                    </a>
+                </div>
+            </div>
+        </section>
+    </footer>
+
+    <script>
+        const cursorFollower = document.createElement('div');
+        cursorFollower.className = 'cursor-follower';
+        document.body.appendChild(cursorFollower);
+
+        document.addEventListener('mousemove', (e) => {
+            cursorFollower.style.left = e.clientX - 10 + 'px';
+            cursorFollower.style.top = e.clientY - 10 + 'px';
+        });
+
+        document.addEventListener('mousedown', () => {
+            cursorFollower.classList.add('clicking');
+        });
+
+        document.addEventListener('mouseup', () => {
+            cursorFollower.classList.remove('clicking');
+        });
+
+        let trailCount = 0;
+        document.addEventListener('mousemove', (e) => {
+            trailCount++;
+            if (trailCount % 3 === 0) {
+                const trail = document.createElement('div');
+                trail.className = 'cursor-trail';
+                trail.style.left = e.clientX - 2 + 'px';
+                trail.style.top = e.clientY - 2 + 'px';
+                document.body.appendChild(trail);
+
+                setTimeout(() => {
+                    trail.remove();
+                }, 400);
+            }
+        });
+    </script>
+</body>
+</html>
