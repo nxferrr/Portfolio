@@ -1,0 +1,20 @@
+{
+  "name": "portfolio-ludovic-thenot",
+  "version": "1.0.0",
+  "description": "Portfolio moderne avec effet Liquid Glass",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server . -p 3000 -o",
+    "build": "echo 'Site web statique - prêt pour déploiement'",
+    "dev": "npx live-server --port=3000 --open=/index.html"
+  },
+  "keywords": ["portfolio", "liquid-glass", "glassmorphism", "web"],
+  "author": "Ludovic Thenot",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "live-server": "^1.2.2"
+  }
+}
+
+/* by Ludo.tht */

@@ -3,118 +3,369 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
     <title>Ludovic Thenot - Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/liquid-glass-react@1.1.1/dist/index.js"></script>
 </head>
 <body>
-    <header>   
-        <h1>Ludovic Thenot</h1>
-        <nav>
-            <a href="#apropos">À propos</a> |
-            <a href="softskills.html">Soft Skills</a> |
-            <a href="realisations.html">Réalisations</a> |
-            <a href="technologies.html">Technologies</a>
+    <div class="background-container">
+        <div class="background-gradient"></div>
+        <div id="background-images" class="background-images"></div>
+    </div>
+
+    <div id="liquid-glass-container">
+        <header class="portfolio-header">
+            <div class="hero-section">
+                <h1>Ludovic Thenot</h1>
+                <p class="subtitle">Étudiant BTS SIO - Portfolio</p>
+                <div class="hero-description">
+                    <p>Passionné par l'informatique et le développement, je crée des solutions innovantes</p>
+    </div>
+            </div>
+        </header>
+
+        <nav class="main-navigation">
+            <div class="nav-container">
+                <a href="#accueil" class="nav-item active">Accueil</a>
+                <a href="#projets" class="nav-item">Projets</a>
+                <a href="#competences" class="nav-item">Compétences</a>
+                <a href="#technologies" class="nav-item">Technologies</a>
+                <a href="#contact" class="nav-item">Contact</a>
+            </div>
         </nav>
-    </header>
 
-    <main>
-        <section id="apropos">
-            <h2>À propos</h2>
-            <p>Je suis actuellement en formation pour obtenir mon BTS SIO.</p>
-        </section>
+        <main class="main-content">
+            <section id="accueil" class="content-section">
+                <div class="glass-card">
+                    <h2>Bienvenue sur mon portfolio</h2>
+                    <p>Je suis un développeur passionné par l'innovation technologique et la création d'expériences utilisateur exceptionnelles. Mon approche combine créativité et expertise technique pour transformer des idées en solutions numériques performantes.</p>
+                    <div class="cta-buttons">
+                        <button class="btn-primary" onclick="scrollToSection('projets')">Voir mes projets</button>
+                        <button class="btn-secondary" onclick="scrollToSection('contact')">Me contacter</button>
+                    </div>
+        </div>
+    </section>
 
-        <section id="presentation">
-            <h2>
-                <img src="Assets/icons8-communication-skill-96.png" alt="Icône présentation" width="35">
-                Présentation
-            </h2>
-            <div id="box1">
-                <p>Bienvenue sur mon portfolio ! Je suis Ludovic Thenot, étudiant en BTS SIO (Services Informatiques aux Organisations).</p>
-                <p>Passionné par l'informatique et l'innovation technologique, je me spécialise dans les solutions d'infrastructure, systèmes et réseaux.</p>
-                <p>Explorez les différentes sections pour découvrir mes compétences, réalisations et projets.</p>
+            <section id="projets" class="content-section">
+                <div class="glass-card">
+                    <h2>
+                        <img src="Assets/icons8-technology-100.png" alt="Projets" width="35" />
+                        Mes Projets
+                    </h2>
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <h3>Portfolio Personnel</h3>
+                            <p>Site web portfolio développé avec HTML, CSS et JavaScript. Design moderne avec effet liquid glass et animations fluides.</p>
+                            <div class="project-tags">
+                                <span class="tag">HTML/CSS</span>
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">Design</span>
+                            </div>
+                        </div>
+                        
+                        <div class="project-card">
+                            <h3>Application E-commerce</h3>
+                            <p>Plateforme de vente en ligne avec gestion d'inventaire, panier d'achat et système de paiement sécurisé.</p>
+                            <div class="project-tags">
+                                <span class="tag">Node.js</span>
+                                <span class="tag">MongoDB</span>
+                                <span class="tag">Stripe</span>
+                            </div>
+                        </div>
+                        
+                        <div class="project-card">
+                            <h3>Dashboard Analytics</h3>
+                            <p>Interface d'administration avec visualisation de données en temps réel et rapports personnalisables.</p>
+                            <div class="project-tags">
+                                <span class="tag">Vue.js</span>
+                                <span class="tag">D3.js</span>
+                                <span class="tag">API REST</span>
+                            </div>
+                        </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="navigation">
-            <h2>
-                <img src="Assets/icons8-technology-100.png" alt="Icône navigation" width="35">
-                Navigation
-            </h2>
-            <div id="box2">
-                <div class="nav-cards">
-                    <div class="nav-card">
-                        <h3><a href="softskills.html">Soft Skills</a></h3>
-                        <p>Découvrez mes compétences comportementales et ma personnalité professionnelle</p>
-                    </div>
-                    <div class="nav-card">
-                        <h3><a href="realisations.html">Réalisations</a></h3>
-                        <p>Explorez mes projets et réalisations techniques</p>
-                    </div>
-                    <div class="nav-card">
-                        <h3><a href="technologies.html">Technologies</a></h3>
-                        <p>Consultez mes compétences techniques et certifications</p>
-                    </div>
+            <section id="competences" class="content-section">
+                <div class="glass-card">
+                    <h2>
+                        <img src="Assets/icons8-critical-thinking-100.png" alt="Compétences" width="35" />
+                        Mes Compétences
+                    </h2>
+                    <div class="skills-container">
+                        <div class="skill-category">
+                            <h3>Soft Skills</h3>
+                            <div class="skills-list">
+                                <div class="skill-item">
+                                    <img src="Assets/icons8-waiting-room-100.png" alt="Patience" width="60" />
+                                    <div>
+                                        <h4>Patience</h4>
+                                        <p>Résolution méthodique des problèmes complexes</p>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <img src="Assets/icons8-learning-100.png" alt="Apprentissage" width="60" />
+                                    <div>
+                                        <h4>Autodidacte</h4>
+                                        <p>Apprentissage continu et adaptation rapide</p>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <img src="Assets/icons8-gourou-flottant-100.png" alt="Sérénité" width="60" />
+                                    <div>
+                                        <h4>Calme</h4>
+                                        <p>Gestion du stress et prise de décision réfléchie</p>
+                                    </div>
+                                </div>
+                            </div>
+        </div>
+        
+                        <div class="skill-category">
+                            <h3>Compétences Techniques</h3>
+                            <div class="skill-bars">
+                                <div class="skill-bar">
+                                    <span>Développement Web</span>
+                                    <div class="progress">
+                                        <div class="progress-fill" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-bar">
+                                    <span>React/Vue.js</span>
+                                    <div class="progress">
+                                        <div class="progress-fill" style="width: 80%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-bar">
+                                    <span>Node.js</span>
+                                    <div class="progress">
+                                        <div class="progress-fill" style="width: 75%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-bar">
+                                    <span>Bases de données</span>
+                                    <div class="progress">
+                                        <div class="progress-fill" style="width: 70%"></div>
+                                    </div>
+                </div>
+                </div>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <footer>
-        <section id="footer">
-            <h2>Contact - Réseaux</h2>
-            <div id="reseaux">
-                <div id="git">
-                    <a href="https://github.com/nxferrr" target="_blank" rel="noopener noreferrer">
-                        <img src="Assets/icons8-octocat.svg" alt="Logo GitHub" width="40" height="40">
-                    </a>
-                </div>
-
-                <div id="link">
-                    <a href="#" target="_blank" rel="noopener noreferrer">
-                        <img src="Assets/icons8-linkedin-96.png" alt="Logo LinkedIn" width="40" height="40">
-                    </a>
-                </div>
+            <section id="technologies" class="content-section">
+                <div class="glass-card">
+                    <h2>
+                        <img src="Assets/icons8-storage-64.png" alt="Technologies" width="35" />
+                        Technologies & Outils
+                    </h2>
+                    <div class="tech-grid">
+                        <div class="tech-category">
+                            <h3>Frontend</h3>
+                            <div class="tech-items">
+                                <span class="tech-item">React</span>
+                                <span class="tech-item">Vue.js</span>
+                                <span class="tech-item">JavaScript</span>
+                                <span class="tech-item">TypeScript</span>
+                                <span class="tech-item">CSS3</span>
+                                <span class="tech-item">Sass</span>
+                            </div>
+                        </div>
+                        
+                        <div class="tech-category">
+                            <h3>Backend</h3>
+                            <div class="tech-items">
+                                <span class="tech-item">Node.js</span>
+                                <span class="tech-item">Express</span>
+                                <span class="tech-item">Python</span>
+                                <span class="tech-item">Flask</span>
+                                <span class="tech-item">API REST</span>
+                                <span class="tech-item">GraphQL</span>
+                            </div>
+                        </div>
+                        
+                        <div class="tech-category">
+                            <h3>Bases de données</h3>
+                            <div class="tech-items">
+                                <span class="tech-item">MongoDB</span>
+                                <span class="tech-item">PostgreSQL</span>
+                                <span class="tech-item">MySQL</span>
+                                <span class="tech-item">Redis</span>
+                            </div>
+                        </div>
+                        
+                        <div class="tech-category">
+                            <h3>Outils & DevOps</h3>
+                            <div class="tech-items">
+                                <span class="tech-item">Git</span>
+                                <span class="tech-item">Docker</span>
+                                <span class="tech-item">AWS</span>
+                                <span class="tech-item">Vercel</span>
+                                <span class="tech-item">Figma</span>
+                                <span class="tech-item">VS Code</span>
+                            </div>
+                        </div>
             </div>
-        </section>
-    </footer>
+        </div>
+    </section>
+
+            <section id="contact" class="content-section">
+                <div class="glass-card">
+                    <h2>Contact & Réseaux</h2>
+                    <div class="contact-content">
+                        <p>N'hésitez pas à me contacter pour discuter de vos projets ou opportunités de collaboration.</p>
+                        <div class="contact-links">
+                            <a href="https://github.com/nxferrr" target="_blank" rel="noopener noreferrer" class="contact-link">
+                                <img src="Assets/icons8-octocat.svg" alt="GitHub" width="50" height="50" />
+                                <span>GitHub</span>
+                            </a>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="contact-link">
+                                <img src="Assets/icons8-linkedin-96.png" alt="LinkedIn" width="50" height="50" />
+                                <span>LinkedIn</span>
+                            </a>
+        </div>
+        </div>
+        </div>
+            </section>
+        </main>
+
+        <footer class="portfolio-footer">
+            <p>&copy; 2024 Ludovic Thenot - Portfolio. Tous droits réservés.</p>
+        </footer>
+        </div>
 
     <script>
-        
-        const cursorFollower = document.createElement('div');
-        cursorFollower.className = 'cursor-follower';
-        document.body.appendChild(cursorFollower);
+        let currentBackgroundIndex = 0;
+        let backgroundImages = [];
+        let backgroundRotationInterval;
 
+        function loadBackgroundImages() {
+            const imageContainer = document.getElementById('background-images');
+            
+            const possibleImages = [
+                'images/background1.jpg',
+                'images/background2.jpg', 
+                'images/background3.jpg',
+                'images/background4.jpg',
+                'images/background5.jpg',
+                'images/bg1.jpg',
+                'images/bg2.jpg',
+                'images/bg3.jpg',
+                'images/fond1.jpg',
+                'images/fond2.jpg'
+            ];
+            
+            possibleImages.forEach(imagePath => {
+                const img = new Image();
+                img.onload = function() {
+                    backgroundImages.push(imagePath);
+                    if (backgroundImages.length === 1) {
+                        displayCurrentBackground();
+                    }
+                };
+                img.src = imagePath;
+            });
+            
+            setTimeout(() => {
+                if (backgroundImages.length > 1) {
+                    startBackgroundRotation();
+                }
+            }, 1000);
+        }
+
+        function displayCurrentBackground() {
+            const imageContainer = document.getElementById('background-images');
+            if (backgroundImages.length > 0) {
+                imageContainer.innerHTML = `<div class="background-image" style="background-image: url('${backgroundImages[currentBackgroundIndex]}')"></div>`;
+            }
+        }
+
+        function nextBackground() {
+            if (backgroundImages.length > 1) {
+                currentBackgroundIndex = (currentBackgroundIndex + 1) % backgroundImages.length;
+                displayCurrentBackground();
+            }
+        }
+
+        function startBackgroundRotation() {
+            if (backgroundImages.length > 1) {
+                backgroundRotationInterval = setInterval(nextBackground, 5000);
+            }
+        }
+
+        function stopBackgroundRotation() {
+            if (backgroundRotationInterval) {
+                clearInterval(backgroundRotationInterval);
+            }
+        }
+
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+
+        const navItems = document.querySelectorAll('.nav-item');
+        const sections = document.querySelectorAll('.content-section');
         
-        document.addEventListener('mousemove', (e) => {
-            cursorFollower.style.left = e.clientX - 10 + 'px';
-            cursorFollower.style.top = e.clientY - 10 + 'px';
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const sectionId = entry.target.id;
+        navItems.forEach(item => {
+                        item.classList.remove('active');
+                        if (item.getAttribute('href') === `#${sectionId}`) {
+                item.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, { threshold: 0.3 });
+
+        sections.forEach(section => {
+            observer.observe(section);
         });
 
-        
-        document.addEventListener('mousedown', () => {
-            cursorFollower.classList.add('clicking');
+        const progressBars = document.querySelectorAll('.progress-fill');
+        const progressObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const progressBar = entry.target;
+                    const width = progressBar.style.width;
+                    progressBar.style.width = '0%';
+                    setTimeout(() => {
+                        progressBar.style.width = width;
+                    }, 200);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        progressBars.forEach(bar => {
+            progressObserver.observe(bar);
         });
 
-        document.addEventListener('mouseup', () => {
-            cursorFollower.classList.remove('clicking');
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.5;
+            document.querySelector('.background-gradient').style.transform = `translateY(${rate}px)`;
         });
 
-        
-        let trailCount = 0;
-        document.addEventListener('mousemove', (e) => {
-            trailCount++;
-            if (trailCount % 3 === 0) {
-                const trail = document.createElement('div');
-                trail.className = 'cursor-trail';
-                trail.style.left = e.clientX - 2 + 'px';
-                trail.style.top = e.clientY - 2 + 'px';
-                document.body.appendChild(trail);
+        document.addEventListener('DOMContentLoaded', () => {
+            loadBackgroundImages();
+        });
 
-                setTimeout(() => {
-                    trail.remove();
-                }, 400);
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                stopBackgroundRotation();
+            } else {
+                if (backgroundImages.length > 1) {
+                    startBackgroundRotation();
+                }
             }
         });
     </script>
 </body>
 </html>
+
+<!-- by Ludo.tht -->
