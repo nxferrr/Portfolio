@@ -1,9 +1,11 @@
+/* --- 1. RÉINITIALISATION GLOBALE (RESET) --- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* --- 2. STYLES DE BASE DU CORPS DE PAGE --- */
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   color: #ffffff;
@@ -14,6 +16,7 @@ body {
   position: relative;
 }
 
+/* --- 3. CONTENEUR DE L'ARRIÈRE-PLAN --- */
 .background-container {
   position: fixed;
   top: 0;
@@ -23,6 +26,7 @@ body {
   z-index: -1;
 }
 
+/* --- 4. COUCHE DE DÉGRADÉ ANIMÉ --- */
 .background-gradient {
   position: absolute;
   top: 0;
@@ -31,16 +35,17 @@ body {
   height: 100%;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
   background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
+  animation: gradientShift 15s ease infinite; /*animation "gradientshift" de 15s
 }
 
+/* --- 5. CONTENEUR DES IMAGES DE FOND (pour diaporama) --- */
 .background-images {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  overflow: hidden; /*cache tout ce qui dépasse de la boîte (conteneur)*/
 }
 
 .background-image {
@@ -53,7 +58,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   opacity: 0;
-  transition: opacity 2s ease-in-out;
+  transition: opacity 2s ease-in-out; /*Cette ligne crée un effet de fondu en douceur.  */
   animation: backgroundFloat 20s ease-in-out infinite;
 }
 
@@ -61,17 +66,32 @@ body {
   opacity: 0.3;
 }
 
+/* --- 6. DÉFINITIONS DES ANIMATIONS (Keyframes) --- */
 @keyframes backgroundFloat {
-  0%, 100% { transform: scale(1) rotate(0deg); }
-  50% { transform: scale(1.05) rotate(1deg); }
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+
+  50% {
+    transform: scale(1.05) rotate(1deg);
+  }
 }
 
 @keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
+/* --- 7. CONTENEUR PRINCIPAL "VERRE DÉPOLI" (Glassmorphism) --- */
 #liquid-glass-container {
   position: relative;
   z-index: 1;
@@ -82,6 +102,7 @@ body {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
+/* --- 8. SECTION EN-TÊTE (HERO) --- */
 .portfolio-header {
   text-align: center;
   padding: 80px 20px 60px;
@@ -101,8 +122,13 @@ body {
 }
 
 @keyframes titleGlow {
-  from { filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3)); }
-  to { filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.6)); }
+  from {
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
+  }
+
+  to {
+    filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.6));
+  }
 }
 
 .subtitle {
@@ -129,12 +155,14 @@ body {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
+/* --- 9. NAVIGATION PRINCIPALE (COLLANTE) --- */
 .main-navigation {
   position: sticky;
   top: 20px;
@@ -192,6 +220,7 @@ body {
   box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
 }
 
+/* --- 10. CONTENU PRINCIPAL ET SECTIONS --- */
 .main-content {
   max-width: 1200px;
   margin: 0 auto;
@@ -205,6 +234,7 @@ body {
   margin-bottom: 60px;
 }
 
+/* --- 11. CARTES "VERRE" (Composant de base) --- */
 .glass-card {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
@@ -219,8 +249,13 @@ body {
 }
 
 @keyframes cardFloat {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+  0%, 100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .glass-card::before {
@@ -272,8 +307,13 @@ body {
 }
 
 @keyframes iconPulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.1); }
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
 }
 
 .glass-card h3 {
@@ -290,6 +330,7 @@ body {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
+/* --- 12. BOUTONS D'ACTION (CTA) --- */
 .cta-buttons {
   display: flex;
   gap: 20px;
@@ -334,6 +375,7 @@ body {
   box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
 }
 
+/* --- 13. GRILLE DE PROJETS --- */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -373,6 +415,7 @@ body {
   box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
 }
 
+/* --- 14. SECTION COMPÉTENCES (SKILLS) --- */
 .skills-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -417,8 +460,13 @@ body {
 }
 
 @keyframes iconFloat {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-5px); }
+  0%, 100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
 }
 
 .skill-item h4 {
@@ -435,6 +483,7 @@ body {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
+/* --- 15. BARRES DE PROGRESSION --- */
 .skill-bars {
   display: flex;
   flex-direction: column;
@@ -483,10 +532,16 @@ body {
 }
 
 @keyframes shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
 }
 
+/* --- 16. GRILLE DES TECHNOLOGIES --- */
 .tech-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -527,6 +582,7 @@ body {
   box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
 }
 
+/* --- 17. SECTION CONTACT --- */
 .contact-content {
   text-align: center;
 }
@@ -573,8 +629,13 @@ body {
 }
 
 @keyframes iconBounce {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.1); }
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
 }
 
 .contact-link span {
@@ -582,6 +643,7 @@ body {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
+/* --- 18. PIED DE PAGE (FOOTER) --- */
 .portfolio-footer {
   text-align: center;
   padding: 40px 0;
@@ -596,96 +658,106 @@ body {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
+/* --- 19. RESPONSIVE DESIGN (Media Queries) --- */
+
+/* Styles pour Tablettes (et écrans plus petits) */
 @media (max-width: 768px) {
   .portfolio-header {
     padding: 60px 15px 40px;
   }
-  
+
   .hero-section h1 {
     font-size: 2.5rem;
   }
-  
+
   .subtitle {
     font-size: 1.2rem;
   }
-  
+
   .glass-card {
     padding: 25px;
   }
-  
+
   .main-navigation {
     margin: 0 15px 30px;
   }
-  
+
   .nav-container {
     padding: 10px 20px;
     gap: 10px;
   }
-  
+
   .nav-item {
     padding: 8px 16px;
     font-size: 0.9rem;
   }
-  
+
   .projects-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .skills-container {
     grid-template-columns: 1fr;
   }
-  
+
   .tech-grid {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
-  
+
   .cta-buttons {
     justify-content: center;
   }
-  
+
   .contact-links {
     gap: 20px;
   }
 }
 
+/* Styles pour Téléphones Mobiles */
 @media (max-width: 480px) {
   .hero-section h1 {
     font-size: 2rem;
   }
-  
+
   .glass-card {
     padding: 20px;
   }
-  
+
   .glass-card h2 {
     font-size: 1.8rem;
   }
-  
+
   .nav-container {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .skill-item {
     flex-direction: column;
     text-align: center;
   }
 }
 
+/* --- 20. EFFETS DIVERS ET SIGNATURE --- */
+
+/* Active le défilement "fluide" lors d'un clic sur un lien d'ancre (ex: <a href="#contact">) */
 html {
   scroll-behavior: smooth;
 }
 
+/* Personnalise la couleur de surbrillance du texte sélectionné */
 ::selection {
   background: rgba(102, 126, 234, 0.3);
   color: white;
 }
 
 ::-moz-selection {
+  /* Version pour Firefox */
   background: rgba(102, 126, 234, 0.3);
   color: white;
 }
 
+/* Ajoute une couche de "particules" animées à l'arrière-plan (via un pseudo-élément) */
 body::before {
   content: '';
   position: fixed;
@@ -693,19 +765,31 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: 
+  background-image:
     radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
     radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
     radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.3) 0%, transparent 50%);
   animation: particleFloat 20s ease-in-out infinite;
   pointer-events: none;
+  /* Permet de cliquer "à travers" cet élément */
   z-index: -1;
+  /* Se place derrière le contenu */
 }
 
+/* Animation de flottement pour les particules */
 @keyframes particleFloat {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  33% { transform: translateY(-30px) rotate(120deg); }
-  66% { transform: translateY(30px) rotate(240deg); }
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  33% {
+    transform: translateY(-30px) rotate(120deg);
+  }
+
+  66% {
+    transform: translateY(30px) rotate(240deg);
+  }
 }
+
 
 /* by Ludo.tht */

@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: white;
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+
+}
+
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100;
+    height: 100;
+    z-index: -1;
+}
+
+.background-gradiant {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #666766, 0%);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+}
+
+.background-image {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}

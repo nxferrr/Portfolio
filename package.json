@@ -1,20 +1,15 @@
 {
   "name": "portfolio-ludovic-thenot",
   "version": "1.0.0",
-  "description": "Portfolio moderne avec effet Liquid Glass",
+  "description": "Portfolio BTS SIO avec Tailwind CSS CDN",
   "main": "index.html",
   "scripts": {
-    "start": "npx http-server . -p 3000 -o",
-    "build": "echo 'Site web statique - prêt pour déploiement'",
-    "dev": "npx live-server --port=3000 --open=/index.html"
+    "start": "npx http-server . -p 3000 -o"
   },
-  "keywords": ["portfolio", "liquid-glass", "glassmorphism", "web"],
+  "keywords": ["portfolio", "bts-sio", "tailwind", "web"],
   "author": "Ludovic Thenot",
   "license": "MIT",
   "devDependencies": {
-    "http-server": "^14.1.1",
-    "live-server": "^1.2.2"
+    "http-server": "^14.1.1"
   }
 }
-
-/* by Ludo.tht */
